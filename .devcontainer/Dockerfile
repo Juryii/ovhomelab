@@ -11,5 +11,4 @@ RUN apt update \
     && chmod 0440 /etc/sudoers.d/${USER}
 
 # install poetry and dependencies
-RUN pip install poetry \
-    && poetry install
+RUN pip install poetry
