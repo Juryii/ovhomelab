@@ -12,3 +12,5 @@ RUN apt update \
 
 # install poetry and dependencies
 RUN pip install poetry
+
+RUN poetry config virtualenvs.in-project true
