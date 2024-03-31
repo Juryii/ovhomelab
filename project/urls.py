@@ -3,8 +3,9 @@ from django.urls import path
 from . import views
 from .views import ProjectsListView, ProjectDetailView, ProjectEditView, ProjectDeleteView, ProjectCreateView
 
-app_name = 'project'
+APP_NAME = 'project'
 
+<<<<<<< HEAD
 urlpatterns = (
     path('', views.index, name='index'),
     path('projects/', ProjectsListView.as_view(), name="projects"),
@@ -13,3 +14,9 @@ urlpatterns = (
     path('project/<int:pk>/delete/', ProjectDeleteView.as_view(), name='project-delete'),
     path('project/create/', ProjectCreateView.as_view(), name='project-create')
 )
+=======
+urlpatterns = [
+    path('', views.index, name="projects"),
+
+]
+>>>>>>> 601ad97 (fix links for projects and home page)
