@@ -104,6 +104,23 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-axes"
+version = "6.4.0"
+description = "Keep track of failed login attempts in Django-powered sites."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "django-axes-6.4.0.tar.gz", hash = "sha256:aff0e853ae9cddbdd9e8dc703b46915a9960012dab602552f61b43c0777bc731"},
+    {file = "django_axes-6.4.0-py3-none-any.whl", hash = "sha256:70508d108abc19bcfdd3e9ef7c9d526a014029a8e2ba51f03a5a8348d6eca1b9"},
+]
+
+[package.dependencies]
+django = ">=3.2"
+
+[package.extras]
+ipware = ["django-ipware (>=3)"]
+
+[[package]]
 name = "django-crispy-forms"
 version = "2.1"
 description = "Best way to have Django DRY forms"
@@ -283,4 +300,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "9cc7272ca4e320a61f206d7067cf895ef18814fd5da382fdf753aa086c327f4b"
+content-hash = "a20231159784cb123ce9abae77dbeb39424186782e947f2ea6a8be3809c167fa"

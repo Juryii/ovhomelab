@@ -13,6 +13,7 @@ crispy-bootstrap5 = "^2024.2"
 autopep8 = "^2.1.0"
 pylint = "^3.1.0"
 pylint-django = "^2.5.5"
+django-axes = "^6.4.0"
 
 
 [tool.poetry.group.dev.dependencies]

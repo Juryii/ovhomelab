@@ -15,13 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-
 from django.urls import include, path
 from django.contrib.auth import views
+from project.views import custom_page_not_found
+from project.views import custom_permission_denied
+from django.conf import settings
+from django.conf.urls.static import static
+
+handler403 = custom_permission_denied
+handler404 = custom_page_not_found
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", include('mainapp.urls')),
+    path('link-page/', admin.site.urls, name='admin-page'),
+    path("", include('project.urls')),
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
     path('password-reset/', views.PasswordResetView.as_view(), name='password_reset'),
@@ -30,4 +36,4 @@ urlpatterns = [
     path('reset/done/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('password-change/', views.PasswordChangeView.as_view(), name='password_change'),
     path('password-change/done/', views.PasswordChangeDoneView.as_view(), name='password_change_done'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

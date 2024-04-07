@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h2 class="text-center mt-5 mb-5">Вы уверены что хотите удалить проект?</h2>
+    <form method="post" class="text-center">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Подтвердить удаление</button>
+        <a href="{% url 'project:projects' %}" class="btn btn-danger" type="button">Отменить удаление</a>
+    </form>
+
+{% endblock main %}

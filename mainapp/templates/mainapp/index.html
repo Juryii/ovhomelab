@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-{% load crispy_forms_tags %}
-
-{% block main %}
-  <h1>Hello from index html</h1>
-  {% if user.is_authenticated %}
-    <p>privite text should be hidden</p>
-  {% endif %}
-{% endblock %}
