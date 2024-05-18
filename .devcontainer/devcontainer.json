@@ -18,7 +18,6 @@
       ]
     }
   },
-  "postCreateCommand": "poetry install",
   "service": "app",
   "dockerComposeFile": "docker-compose.yml"
 }
