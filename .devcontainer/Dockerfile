@@ -17,3 +17,9 @@ RUN apt update \
 RUN pip install poetry
 
 RUN poetry config virtualenvs.in-project true
+
+WORKDIR /workspace
+
+COPY . /workspace
+
+RUN poetry install

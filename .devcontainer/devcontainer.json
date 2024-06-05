@@ -21,6 +21,5 @@
     "POSTGRES_DB": "${{ secrets.POSTGRES_DB }}",
     "DJANGO_SECRET_KEY": "${{ secrets.DJANGO_SECRET_KEY }}",
     "DEBUG": "${{ secrets.DEBUG }}"
-  },
-  "postCreateCommand": "poetry install"
+  }
 }
