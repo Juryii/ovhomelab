@@ -1,14 +1,10 @@
 {
-  "name": "Django with PostgreSQL",
-  "dockerComposeFile": ["docker-compose.yml"],
-  "service": "app",
+  "name": "Django app",
+  "build": {"dockerfile": "Dockerfile"},
+  "remoteUser": "vscode",
   "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
-      "settings": {
-        "python.pythonPath": "/usr/local/bin/python",
-        "editor.formatOnSave": true
-      },
       "extensions": [
         "ms-python.python",
         "eamodio.gitlens",
@@ -19,13 +15,12 @@
       ]
     }
   },
-  "remoteUser": "vscode",
-
-  // "remoteEnv": {
-  //   "POSTGRES_USER": "${{ secrets.POSTGRES_USER }}",
-  //   "POSTGRES_PASSWORD": "${{ secrets.POSTGRES_PASSWORD }}",
-  //   "POSTGRES_DB": "${{ secrets.POSTGRES_DB }}",
-  //   "DJANGO_SECRET_KEY": "${{ secrets.DJANGO_SECRET_KEY }}",
-  //   "DEBUG": "${{ secrets.DEBUG }}"
-  // }
+  "remoteEnv": {
+    "POSTGRES_USER": "${{ secrets.POSTGRES_USER }}",
+    "POSTGRES_PASSWORD": "${{ secrets.POSTGRES_PASSWORD }}",
+    "POSTGRES_DB": "${{ secrets.POSTGRES_DB }}",
+    "DJANGO_SECRET_KEY": "${{ secrets.DJANGO_SECRET_KEY }}",
+    "DEBUG": "${{ secrets.DEBUG }}"
+  },
+  "postCreateCommand": "poetry install"
 }

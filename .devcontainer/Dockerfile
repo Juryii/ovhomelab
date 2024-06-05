@@ -1,7 +1,4 @@
-ARG VARIANT=3.11-bookworm
-FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
-
-ENV PYTHONUNBUFFERED 1
+FROM library/python:3.11-bookworm
 
 ARG USER=vscode
 ARG DEBIAN_FRONTEND=noninteractive
@@ -16,10 +13,7 @@ RUN apt update \
     && echo "${USER} ALL=(ALL) NOPASSWD: ALL" >/etc/sudoers.d/${USER} \
     && chmod 0440 /etc/sudoers.d/${USER}
 
-# Установка Poetry
-RUN pip install poetry \
-    && poetry config virtualenvs.in-project true \
-    && poetry install
+# install poetry and dependencies
+RUN pip install poetry
 
-# Команда для запуска веб-сервера Django
-# CMD poetry install && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
+RUN poetry config virtualenvs.in-project true
