@@ -22,4 +22,4 @@ WORKDIR /workspace
 
 COPY . /workspace
 
-RUN poetry install
+# RUN poetry install
