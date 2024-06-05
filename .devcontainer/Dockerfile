@@ -2,13 +2,10 @@ FROM library/python:3.11-bookworm
 
 ARG USER=vscode
 ARG DEBIAN_FRONTEND=noninteractive
-ARG POSTGRES_USER
-ARG POSTGRES_PASSWORD
-ARG POSTGRES_DB
 
 # Обновление и установка необходимых пакетов
 RUN apt update \
-    && apt install -y --no-install-recommends sudo git postgresql postgresql-contrib \
+    && apt install -y --no-install-recommends sudo git \
     && apt autoremove -y \
     && apt clean \
     && rm -rf /var/lib/apt/lists/* \
@@ -20,16 +17,7 @@ RUN apt update \
 RUN pip install poetry \
     && poetry config virtualenvs.in-project true
 
-# Настройка PostgreSQL
-USER postgres
-RUN service postgresql start && \
-    sudo -u postgres psql -c "CREATE USER ${POSTGRES_USER} WITH PASSWORD '${POSTGRES_PASSWORD}';" && \
-    sudo -u postgres psql -c "CREATE DATABASE ${POSTGRES_DB} OWNER ${POSTGRES_USER};" && \
-    service postgresql stop
-
-# Переключение обратно на пользователя vscode
-USER ${USER}
 WORKDIR /workspace
 
 # Команда для запуска PostgreSQL и веб-сервера Django
-CMD sudo service postgresql start && poetry install && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
+CMD poetry install && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
