@@ -20,6 +20,6 @@ RUN poetry config virtualenvs.in-project true
 
 WORKDIR /workspace
 
-COPY . /workspace
+COPY .. /workspace
 
 # RUN poetry install
