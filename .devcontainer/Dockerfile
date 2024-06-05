@@ -2,6 +2,9 @@ FROM library/python:3.11-bookworm
 
 ARG USER=vscode
 ARG DEBIAN_FRONTEND=noninteractive
+ARG POSTGRES_USER
+ARG POSTGRES_PASSWORD
+ARG POSTGRES_DB
 
 # Обновление и установка необходимых пакетов
 RUN apt update \
