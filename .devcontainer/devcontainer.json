@@ -1,7 +1,8 @@
 {
   "name": "Django with PostgreSQL",
-  "build": { "dockerfile": "Dockerfile" },
-  "remoteUser": "vscode",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "app",
+  "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "settings": {
@@ -18,14 +19,13 @@
       ]
     }
   },
-  "service": "app",
-  "dockerComposeFile": "docker-compose.yml",
-  "workspaceFolder": "/workspace",
-  "remoteEnv": {
-    "POSTGRES_USER": "${{ secrets.POSTGRES_USER }}",
-    "POSTGRES_PASSWORD": "${{ secrets.POSTGRES_PASSWORD }}",
-    "POSTGRES_DB": "${{ secrets.POSTGRES_DB }}",
-    "DJANGO_SECRET_KEY": "${{ secrets.DJANGO_SECRET_KEY }}",
-    "DEBUG": "${{ secrets.DEBUG }}"
-  }
+  "remoteUser": "vscode",
+
+  // "remoteEnv": {
+  //   "POSTGRES_USER": "${{ secrets.POSTGRES_USER }}",
+  //   "POSTGRES_PASSWORD": "${{ secrets.POSTGRES_PASSWORD }}",
+  //   "POSTGRES_DB": "${{ secrets.POSTGRES_DB }}",
+  //   "DJANGO_SECRET_KEY": "${{ secrets.DJANGO_SECRET_KEY }}",
+  //   "DEBUG": "${{ secrets.DEBUG }}"
+  // }
 }

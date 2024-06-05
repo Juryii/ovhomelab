@@ -1,4 +1,7 @@
-FROM library/python:3.11-bookworm
+ARG VARIANT=3.11-bookworm
+FROM mcr.microsoft.com/vscode/devcontainers/python:${VARIANT}
+
+ENV PYTHONUNBUFFERED 1
 
 ARG USER=vscode
 ARG DEBIAN_FRONTEND=noninteractive
@@ -15,9 +18,8 @@ RUN apt update \
 
 # Установка Poetry
 RUN pip install poetry \
-    && poetry config virtualenvs.in-project true
+    && poetry config virtualenvs.in-project true \
+    && poetry install
 
-WORKDIR /workspace
-
-# Команда для запуска PostgreSQL и веб-сервера Django
-CMD poetry install && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
+# Команда для запуска веб-сервера Django
+# CMD poetry install && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
