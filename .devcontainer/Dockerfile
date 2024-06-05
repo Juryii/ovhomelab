@@ -23,8 +23,11 @@ RUN pip install poetry \
 # Настройка PostgreSQL
 USER postgres
 RUN service postgresql start && \
-    psql --command "CREATE USER ${POSTGRES_USER} WITH SUPERUSER PASSWORD '${POSTGRES_PASSWORD}';" && \
-    createdb -O ${POSTGRES_USER} ${POSTGRES_DB}
+    su postgres -c "psql -c \"CREATE USER ${POSTGRES_USER} WITH PASSWORD '${POSTGRES_PASSWORD}';\"" && \
+    su postgres -c "psql -c \"CREATE DATABASE ${POSTGRES_DB} OWNER ${POSTGRES_USER} ;\"" && \
+    service postgresql stop
+    #psql --command "CREATE USER ${POSTGRES_USER} WITH SUPERUSER PASSWORD '${POSTGRES_PASSWORD}';" && \
+    #createdb -O ${POSTGRES_USER} ${POSTGRES_DB}
 
 # Переключение обратно на пользователя vscode
 USER ${USER}
