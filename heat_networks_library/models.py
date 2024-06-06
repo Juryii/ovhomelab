@@ -8,4 +8,3 @@ class Pipe(models.Model):
     wall_thickness = models.DecimalField(max_digits=5, decimal_places=2)
     weight_per_meter = models.DecimalField(max_digits=10, decimal_places=2)
     quality_standard = models.CharField(max_length=100)
-

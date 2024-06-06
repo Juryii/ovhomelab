@@ -25,7 +25,13 @@
 			"extensions": [
 				"ms-python.python",
 				"eamodio.gitlens",
-				"editorconfig.editorconfig"
+				"editorconfig.editorconfig",
+				"batisteo.vscode-django",
+				"ms-python.black-formatter",
+				"ms-python.pylint",
+				"Zignd.html-css-class-completion",
+				"formulahendry.auto-rename-tag",
+				"ms-python.debugpy"
 			]
 		}
 	}

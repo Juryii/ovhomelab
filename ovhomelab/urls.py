@@ -26,7 +26,7 @@ handler403 = custom_permission_denied
 handler404 = custom_page_not_found
 
 urlpatterns = [
-    path('link-page/', admin.site.urls, name='admin-page'),
+    path('link-page/', admin.site.urls),
     path("", include('project.urls')),
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
