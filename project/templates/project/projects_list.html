@@ -2,22 +2,22 @@
 {% load crispy_forms_tags %}
 
 {% block main %}
-    <h1>Мои проекты:</h1>
-    <div class="row">
-        {% for project in projects_list %}
-            <div class="col-md-6">
-                <div class="card m-3">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ project.project_name | escape }}</h5>
-                        <p class="card-text">{{ project.project_description | escape }}</p>
-                        <p class="card-text"><small class="text-muted">Автор: {{ project.created_by | escape }}</small></p>
-                        <p class="card-text"><small class="text-muted">Изменено: {{ project.updated_on }}</small></p>
-                        <a href="{% url 'project:project_detail' pk=project.pk %}" class="btn btn-primary">Подробно</a>
-                    </div>
-                </div>
+<h1>Мои проекты:</h1>
+<div class="row">
+    {% for project in projects_list %}
+    <div class="col-md-6">
+        <div class="card m-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.project_name | escape }}</h5>
+                <p class="card-text">{{ project.project_description | escape }}</p>
+                <p class="card-text"><small class="text-muted">Автор: {{ project.created_by | escape }}</small></p>
+                <p class="card-text"><small class="text-muted">Изменено: {{ project.updated_on }}</small></p>
+                <a href="{% url 'project:project_detail' pk=project.pk %}" class="btn btn-primary">Подробно</a>
             </div>
-
-        {% endfor %}
+        </div>
     </div>
-    <a class="btn btn-primary" href="{% url 'project:project-create' %}" role="button">Создать проект</a>
+
+    {% endfor %}
+</div>
+<a class="btn btn-primary" href="{% url 'project:project-create' %}" role="button">Создать проект</a>
 {% endblock main %}

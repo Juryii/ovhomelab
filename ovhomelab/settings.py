@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-^m^9^usdn-^zrw%2u4utl7vb0mwxohv%k7i2m%v77fb0ec2xdx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'True'
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -175,3 +175,5 @@ AUTHENTICATION_BACKENDS = [
     # Django ModelBackend is the default authentication backend.
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+CSRF_TRUSTED_ORIGINS = ['https://localhost','https://127.0.0.1', 'https://localhost:8000']
