@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "axes",
     # my apps
     "project",
+    "heat_networks_library",
 ]
 
 MIDDLEWARE = [
@@ -169,7 +170,7 @@ AXES_COOLOFF_TIME = timedelta(
     minutes=30
 )  # Время блокировки учетной записи после неудачных попыток входа
 AXES_FAILURE_LIMIT = (
-    5  # Количество неудачных попыток входа до блокировки учетной записи
+    3  # Количество неудачных попыток входа до блокировки учетной записи
 )
 
 AUTHENTICATION_BACKENDS = [

@@ -25,8 +25,15 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Калькулятор</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Библиотека</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Библиотека</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'heat_networks_library:index' %}">Тепловые сети</a></li>
+                <li><a class="dropdown-item" href="#">Отопление</a></li>
+                <li><a class="dropdown-item" href="#">Вентиляция</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Кондиционирование</a></li>
+              </ul>
             </li>
             {% if user.is_authenticated and user.is_superuser %}
               <a class="nav-link" href="{% url 'admin:index' %}">Административная панель</a>

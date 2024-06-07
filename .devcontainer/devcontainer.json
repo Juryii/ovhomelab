@@ -31,7 +31,8 @@
 				"ms-python.pylint",
 				"Zignd.html-css-class-completion",
 				"formulahendry.auto-rename-tag",
-				"ms-python.debugpy"
+				"ms-python.debugpy",
+				"njpwerner.autodocstring"
 			]
 		}
 	}
