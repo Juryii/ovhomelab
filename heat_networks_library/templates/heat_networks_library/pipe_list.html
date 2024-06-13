@@ -33,9 +33,15 @@
         {% for thickness in pipe.wall_thickness %}
         {{ thickness|floatformat }}
         {% if not forloop.last %}, {% endif %}
-    {% endfor %}</p>
-      <p>Вес 1м трубы: {{pipe.weight_per_meter|floatformat}}</p>
-      <p>Наименование ГОСТа {{pipe.quality_standard}}</p>
+        {% endfor %}
+      </p>
+      <p>Вес 1м трубы:
+        {% for weight in pipe.weight_per_meter %}
+        {{ weight|floatformat }}
+        {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+      </p>
+      <p>Наименование ГОСТа: {{pipe.quality_standard}}</p>
     </div>
   </div>
   {% endfor %}
