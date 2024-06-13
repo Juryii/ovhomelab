@@ -1,0 +1,189 @@
+[
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø10.2 ГОСТ 3262-75",
+            "nominal_diameter": 6,
+            "outer_diameter": "10.20",
+            "wall_thickness": "[\"1.80\", \"2.00\", \"2.50\"]",
+            "weight_per_meter": "[\"0.37\", \"0.40\", \"0.47\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø13.5 ГОСТ 3262-75",
+            "nominal_diameter": 8,
+            "outer_diameter": "13.50",
+            "wall_thickness": "[\"2.00\", \"2.20\", \"2.80\"]",
+            "weight_per_meter": "[\"0.57\", \"0.61\", \"0.74\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø17.0 ГОСТ 3262-75",
+            "nominal_diameter": 10,
+            "outer_diameter": "17.00",
+            "wall_thickness": "[\"2.00\", \"2.20\", \"2.80\"]",
+            "weight_per_meter": "[\"0.74\", \"0.80\", \"0.98\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø21.3 ГОСТ 3262-75",
+            "nominal_diameter": 15,
+            "outer_diameter": "21.30",
+            "wall_thickness": "[\"2.35\"]",
+            "weight_per_meter": "[\"1.10\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø21.3 ГОСТ 3262-75",
+            "nominal_diameter": 15,
+            "outer_diameter": "21.30",
+            "wall_thickness": "[\"2.50\", \"2.80\", \"3.20\"]",
+            "weight_per_meter": "[\"1.16\", \"1.28\", \"1.43\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø26.8 ГОСТ 3262-75",
+            "nominal_diameter": 20,
+            "outer_diameter": "26.80",
+            "wall_thickness": "[\"2.35\"]",
+            "weight_per_meter": "[\"1.42\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø26.8 ГОСТ 3262-75",
+            "nominal_diameter": 20,
+            "outer_diameter": "26.80",
+            "wall_thickness": "[\"2.50\", \"2.80\", \"3.20\"]",
+            "weight_per_meter": "[\"1.50\", \"1.66\", \"1.86\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø33.5 ГОСТ 3262-75",
+            "nominal_diameter": 25,
+            "outer_diameter": "33.50",
+            "wall_thickness": "[\"2.80\", \"3.20\", \"4.00\"]",
+            "weight_per_meter": "[\"2.12\", \"2.39\", \"2.91\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø42.3 ГОСТ 3262-75",
+            "nominal_diameter": 32,
+            "outer_diameter": "42.30",
+            "wall_thickness": "[\"2.80\", \"3.20\", \"4.00\"]",
+            "weight_per_meter": "[\"2.73\", \"3.09\", \"3.78\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø48.0 ГОСТ 3262-75",
+            "nominal_diameter": 40,
+            "outer_diameter": "48.00",
+            "wall_thickness": "[\"3.00\", \"3.50\", \"4.00\"]",
+            "weight_per_meter": "[\"3.33\", \"3.84\", \"4.34\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø60 ГОСТ 3262-75",
+            "nominal_diameter": 50,
+            "outer_diameter": "60.00",
+            "wall_thickness": "[\"3.00\", \"3.50\", \"4.00\"]",
+            "weight_per_meter": "[\"4.22\", \"4.88\", \"6.16\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø75.5 ГОСТ 3262-75",
+            "nominal_diameter": 65,
+            "outer_diameter": "75.50",
+            "wall_thickness": "[\"3.20\", \"4.00\", \"4.50\"]",
+            "weight_per_meter": "[\"5.71\", \"7.05\", \"7.88\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø88.5 ГОСТ 3262-75",
+            "nominal_diameter": 80,
+            "outer_diameter": "88.50",
+            "wall_thickness": "[\"3.50\", \"4.00\", \"4.50\"]",
+            "weight_per_meter": "[\"7.34\", \"8.34\", \"9.32\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø101.3 ГОСТ 3262-75",
+            "nominal_diameter": 90,
+            "outer_diameter": "101.30",
+            "wall_thickness": "[\"3.50\", \"4.00\", \"4.50\"]",
+            "weight_per_meter": "[\"8.44\", \"9.60\", \"10.74\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø114 ГОСТ 3262-75",
+            "nominal_diameter": 100,
+            "outer_diameter": "114.00",
+            "wall_thickness": "[\"4.00\", \"4.50\", \"5.00\"]",
+            "weight_per_meter": "[\"10.85\", \"12.15\", \"13.44\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø140 ГОСТ 3262-75",
+            "nominal_diameter": 125,
+            "outer_diameter": "140.00",
+            "wall_thickness": "[\"4.00\", \"4.50\", \"5.50\"]",
+            "weight_per_meter": "[\"13.42\", \"15.04\", \"18.24\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    },
+    {
+        "model": "heat_networks_library.pipe",
+        "fields": {
+            "name": "Труба Ø165 ГОСТ 3262-75",
+            "nominal_diameter": 150,
+            "outer_diameter": "165.00",
+            "wall_thickness": "[\"4.00\", \"4.50\", \"5.50\"]",
+            "weight_per_meter": "[\"15.88\", \"17.00\", \"81.00\", \"21.63\"]",
+            "quality_standard": "ГОСТ 3262-75"
+        }
+    }
+]

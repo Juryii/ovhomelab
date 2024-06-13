@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "axes",
+    'django_dump_load_utf8',
     # my apps
     "project",
     "heat_networks_library",

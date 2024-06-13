@@ -6,6 +6,7 @@ dill==0.3.8
 Django==4.2.11
 django-axes==6.4.0
 django-crispy-forms==2.1
+django-dump-load-utf8==0.0.4
 isort==5.13.2
 mccabe==0.7.0
 platformdirs==4.2.2

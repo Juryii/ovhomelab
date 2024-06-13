@@ -1,6 +1,18 @@
 # ovhomelab
 django site for ov calculator
 
+## дамп данных:
+python manage.py dumpdatautf8 heat_networks_library.Pipe --natural-primary --output heat_networks_library/fixtures/pipes_gost_3262.json
+
+## Загрузка данных
+### данные разделены наразные файлы по гостам для удобного контроля заданными
+python manae.py loaddatautf8 heat_networks_library/fixtures/pipes_gost_3262.json
+python manae.py loaddatautf8 heat_networks_library/fixtures/pipes_gost_10704.json # отсутствуют данные
+python manae.py loaddatautf8 heat_networks_library/fixtures/pipes_gost_8732.json # отсутствуют данные
+
+Удаление pk из дампа даных
+python remove_pk.py heat_networks_library/fixtures/pipes_gost_3262.json
+
 планируемая структура проекта
 ovhomelab/
 ├── ovhomelab/
