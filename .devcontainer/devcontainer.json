@@ -32,7 +32,8 @@
 				"Zignd.html-css-class-completion",
 				"formulahendry.auto-rename-tag",
 				"ms-python.debugpy",
-				"njpwerner.autodocstring"
+				"njpwerner.autodocstring",
+				"esbenp.prettier-vscode"
 			]
 		}
 	}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block main %}
+<h1>Hello from heat netwoks library index html</h1>
+{% if user.is_superuser %} {% comment %} heat_networks_library {% endcomment %}
+<p>privite text should be hidden</p>
+<a
+  class="btn btn-primary"
+  href="{% url 'heat_networks_library:add_pipe' %}"
+  role="button"
+  >Добавить трубу</a
+>
+
+{% endif %}
+<div class="row mt-3 mb-3">
+<ul class="list-group">
+  {% for pipe in pipes %}
+  <li
+    class="list-group-item"
+    data-bs-toggle="collapse"
+    data-bs-target="#multiCollapse_pipe{{pipe.pk}}"
+    aria-expanded="true"
+    aria-controls="multiCollapse_pipe{{pipe.pk}}"
+  >
+    {{pipe.name}}
+  </li>
+  <div class="collapse multi-collapse" id="multiCollapse_pipe{{pipe.pk}}">
+    <div class="card card-body">
+      {% if pipe.nominal_diameter %}
+      <p>Номинальный диаметр DN: {{pipe.nominal_diameter|floatformat}}</p>
+      {% endif %}
+      <p>Наружный диаметр Ødн: {{pipe.outer_diameter|floatformat}}</p>
+      
+      <p>Список толщин стенок: 
+        {% for thickness in pipe.wall_thickness %}
+        {{ thickness|floatformat }}
+        {% if not forloop.last %}, {% endif %}
+    {% endfor %}</p>
+      <p>Вес 1м трубы: {{pipe.weight_per_meter|floatformat}}</p>
+      <p>Наименование ГОСТа {{pipe.quality_standard}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</ul>
+</div>
+
+{% endblock %}

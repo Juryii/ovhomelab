@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, render
+from django.urls import reverse_lazy
 from django.views.generic import (
     ListView,
     DetailView,
@@ -8,7 +9,6 @@ from django.views.generic import (
 )
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
-from django.urls import reverse_lazy
 from project.models import Projects
 from .forms import ProjectCreateForm, ProjectEditForm
 
@@ -17,7 +17,7 @@ from .forms import ProjectCreateForm, ProjectEditForm
 
 
 class ProjectAccessMixin:
-    def get_object(self, queryset=None):
+    def get_object(self):
         obj = get_object_or_404(Projects, pk=self.kwargs["pk"])
         if not obj.user_has_access(
             self.request.user

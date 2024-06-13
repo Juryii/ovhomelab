@@ -17,10 +17,13 @@ class Pipe(models.Model):
     )  # Наружный диаметр dн
     wall_thickness = ArrayField(
         models.DecimalField(max_digits=4, decimal_places=2)
-    )  # толщина стенки s
+    )  # Список толщин стенок для данного диаметра s
     weight_per_meter = models.DecimalField(
         max_digits=10, decimal_places=2
     )  # вес 1м трубы m
     quality_standard = models.CharField(
         max_length=100
     )  # Наименование ГОСТа трубы ГОСТ 8732-78
+
+    def __str__(self) -> str:
+        return str(self.name)
