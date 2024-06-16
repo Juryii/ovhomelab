@@ -10,42 +10,69 @@
 >
 
 {% endif %}
-<div class="row mt-3 mb-3">
-<ul class="list-group">
-  {% for pipe in pipes %}
-  <li
-    class="list-group-item"
-    data-bs-toggle="collapse"
-    data-bs-target="#multiCollapse_pipe{{pipe.pk}}"
-    aria-expanded="true"
-    aria-controls="multiCollapse_pipe{{pipe.pk}}"
-  >
-    {{pipe.name}}
-  </li>
-  <div class="collapse multi-collapse" id="multiCollapse_pipe{{pipe.pk}}">
-    <div class="card card-body">
-      {% if pipe.nominal_diameter %}
-      <p>Номинальный диаметр DN: {{pipe.nominal_diameter|floatformat}}</p>
-      {% endif %}
-      <p>Наружный диаметр Ødн: {{pipe.outer_diameter|floatformat}}</p>
-      
-      <p>Список толщин стенок: 
-        {% for thickness in pipe.wall_thickness %}
-        {{ thickness|floatformat }}
-        {% if not forloop.last %}, {% endif %}
-        {% endfor %}
-      </p>
-      <p>Вес 1м трубы:
-        {% for weight in pipe.weight_per_meter %}
-        {{ weight|floatformat }}
-        {% if not forloop.last %}, {% endif %}
-        {% endfor %}
-      </p>
-      <p>Наименование ГОСТа: {{pipe.quality_standard}}</p>
+<div class="row mt-3 mb-3" >
+  <ul class="list-group">
+    {% for pipe in pipes %}
+    <div class=" bg-ligh border rounded-3 shadow mt-2">
+      <li
+      class="list-group-item"
+      data-bs-toggle="collapse"
+      data-bs-target="#multiCollapse_pipe{{pipe.pk}}"
+      aria-expanded="true"
+      aria-controls="multiCollapse_pipe{{pipe.pk}}"
+
+    >
+      {{pipe.name}}
+    </li>
     </div>
-  </div>
-  {% endfor %}
-</ul>
+    <div class="collapse multi-collapse" id="multiCollapse_pipe{{pipe.pk}}">
+      <div class="card card-body shadow-lg p-3 mb-5 bg-body rounded">
+        {% if pipe.nominal_diameter %}
+        <div class="p-2 bg-ligh border border-secondary rounded-3 shadow my-2">
+          Номинальный диаметр DN: {{pipe.nominal_diameter|floatformat}}
+        </div>
+        {% endif %}
+        <div class="p-2 bg-ligh border border-secondary rounded-3 shadow my-2">
+          Наружный диаметр Ødн: {{pipe.outer_diameter|floatformat}}
+        </div>
+        <div class="p-2 bg-ligh border border-secondary rounded-3 shadow my-2">
+          Наименование ГОСТа: {{pipe.quality_standard}}
+        </div>
+
+        <div class="d-flex flex-row bg-ligh border border-secondary rounded-3 shadow my-2 p-2">
+
+          <div class="flex-column py-2 text-center me-2">
+            <div class="mb-2 border-2 border-bottom border-secondary">№</div>
+            {% for index in pipe.wall_thickness %}
+                <div class="border-1 border-bottom border-secondary">
+                    {{ forloop.counter }}
+                </div>
+            {% endfor %}
+          </div>
+                    
+          <div class="flex-column py-2 text-center mx-2">
+            <div class="mb-2 border-2 border-bottom border-secondary">Толщина стенки, мм</div>
+            {% for thickness in pipe.wall_thickness %}
+            <div class="border-1 border-bottom border-secondary">
+            {{thickness|floatformat:2}}
+            </div>
+            {% endfor %}
+          </div>
+
+          <div class="flex-column py-2 text-center mx-2">
+            <div class="mb-2 border-2 border-bottom border-secondary">Вес трубы, кг</div>
+            {% for weight in pipe.weight_per_meter %}
+            <div class="border-1 border-bottom border-secondary">
+              {{weight|floatformat:2}}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+       
+      </div>
+    </div>
+    {% endfor %}
+  </ul>
 </div>
 
 {% endblock %}
